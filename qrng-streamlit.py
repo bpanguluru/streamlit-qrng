@@ -35,7 +35,7 @@ def get_qrand_int64() -> List[int]:
 while(True):
     try:
         randomMethod = st.text_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n ", key = "90")
-
+        st.text("you chose: ", type(randomMethod))
         if randomMethod == "1":
             no_flips = st.text_input("Flip how many times?: ", key ="1")
             for i in range(int(no_flips)):
