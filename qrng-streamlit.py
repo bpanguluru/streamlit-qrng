@@ -34,25 +34,25 @@ def get_qrand_int64() -> List[int]:
 
 while(True):
     try:
-        randomMethod = st.number_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n ")
+        randomMethod = st.text_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n ")
 
-        if randomMethod == 1:
-            no_flips = st.number_input("Flip how many times?: ", key ="1")
+        if randomMethod == "1":
+            no_flips = st.text_input("Flip how many times?: ", key ="1")
             for i in range(no_flips):
                 rand.seed(get_qrand_int64()[0])
                 coin = rand.randint(0, 1)
                 if coin == 0:
-                    print("tails")
+                    st.write("tails")
                 if coin == 1:
-                    print("heads")
+                    st.write("heads")
 
-        if randomMethod == 2:
+        if randomMethod == "2":
             list_chance = []
             nameChance_dict = {}
-            no_individuals = st.number_input("How many individuals?: ", key = "2")
+            no_individuals = st.text_input("How many individuals?: ", key = "2")
 
             for j in range(no_individuals):
-                name = str(text_input("Name: "))
+                name = st.text_input("Name: ")
                 rand.seed(get_qrand_int64()[0])
                 chance = rand.random()
                 while chance == any in list_chance:
@@ -67,7 +67,7 @@ while(True):
             # print(sorted_list)
 
             for k in range(choose_how_many):
-                print(nameChance_dict[new[sorted_list[len(sorted_list) - 1 - k]]])
+                st.write(nameChance_dict[new[sorted_list[len(sorted_list) - 1 - k]]])
     except:
         continue
 
