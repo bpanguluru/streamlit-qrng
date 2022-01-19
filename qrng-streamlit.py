@@ -2,34 +2,37 @@
 # coding: utf-8
 
 # In[ ]:
-import random as rand
-from typing import Dict, List, Union
-import numpy as np
-import requests
-import streamlit as st
+try:
+    import random as rand
+    from typing import Dict, List, Union
+    import numpy as np
+    import requests
+    import streamlit as st
 
-_ANU_PARAMS: Dict[str, Union[int, str]] = {
-    "length": 1,
-    "type": "hex16",
-    "size": 8,
-}
-_ANU_URL: str = "https://qrng.anu.edu.au/API/jsonI.php"
+    _ANU_PARAMS: Dict[str, Union[int, str]] = {
+        "length": 1,
+        "type": "hex16",
+        "size": 8,
+    }
+    _ANU_URL: str = "https://qrng.anu.edu.au/API/jsonI.php"
 
 
-def get_qrand_int64() -> List[int]:
-    """Get quantum random int64s from the ANU API."""
-    response = requests.get(_ANU_URL, _ANU_PARAMS)
-    response.raise_for_status()
-    r_json = response.json()
+    def get_qrand_int64() -> List[int]:
+        """Get quantum random int64s from the ANU API."""
+        response = requests.get(_ANU_URL, _ANU_PARAMS)
+        response.raise_for_status()
+        r_json = response.json()
 
-    if r_json["success"]:
-        return [int(number, 16) for number in r_json["data"]]
-    else:
-        raise RuntimeError(
-            "The 'success' field in the ANU response was False."
-        )
-#print(len(get_qrand_int64()))
-
+        if r_json["success"]:
+            return [int(number, 16) for number in r_json["data"]]
+        else:
+            raise RuntimeError(
+                "The 'success' field in the ANU response was False."
+            )
+    #print(len(get_qrand_int64()))
+except:
+    st.write("failure")
+    
 while(True):
     try:
         randomMethod = st.text_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n ", key = "90")
