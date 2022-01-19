@@ -38,7 +38,7 @@ while(True):
 
         if randomMethod == "1":
             no_flips = st.text_input("Flip how many times?: ", key ="1")
-            for i in range(no_flips):
+            for i in range(int(no_flips)):
                 rand.seed(get_qrand_int64()[0])
                 coin = rand.randint(0, 1)
                 if coin == 0:
@@ -51,7 +51,7 @@ while(True):
             nameChance_dict = {}
             no_individuals = st.text_input("How many individuals?: ", key = "2")
 
-            for j in range(no_individuals):
+            for j in range(int(no_individuals)):
                 name = st.text_input("Name: ",  key = "nombre")
                 rand.seed(get_qrand_int64()[0])
                 chance = rand.random()
@@ -66,7 +66,7 @@ while(True):
             sorted_list = np.argsort(new)
             # print(sorted_list)
 
-            for k in range(choose_how_many):
+            for k in range(int(choose_how_many)):
                 st.write(nameChance_dict[new[sorted_list[len(sorted_list) - 1 - k]]])
     except:
         continue
