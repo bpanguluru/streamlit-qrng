@@ -34,10 +34,10 @@ def get_qrand_int64() -> List[int]:
 
 while(True):
     try:
-        randomMethod = int(st.text_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n "))
+        randomMethod = st.number_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n ")
 
         if randomMethod == 1:
-            no_flips = int(st.text_input("Flip how many times?: ", key ="1"))
+            no_flips = st.number_input("Flip how many times?: ", key ="1")
             for i in range(no_flips):
                 rand.seed(get_qrand_int64()[0])
                 coin = rand.randint(0, 1)
@@ -49,7 +49,7 @@ while(True):
         if randomMethod == 2:
             list_chance = []
             nameChance_dict = {}
-            no_individuals = int(st.text_input("How many individuals?: ", key = "2"))
+            no_individuals = st.number_input("How many individuals?: ", key = "2")
 
             for j in range(no_individuals):
                 name = str(text_input("Name: "))
@@ -61,7 +61,7 @@ while(True):
                 nameChance_dict[chance] = name
                 list_chance.append(chance)
                 new = np.asarray(list_chance)
-            choose_how_many = int(st.text_input("How many individuals must be selected?: ", key = "3"))
+            choose_how_many = st.number_input("How many individuals must be selected?: ", key = "3")
             # print(new, type(new))
             sorted_list = np.argsort(new)
             # print(sorted_list)
