@@ -60,7 +60,7 @@ try:
         no_individuals = st.text_input("How many individuals?: ", key = "somethinnnnn")
 
         for j in range(int(no_individuals.title())):
-            st.write("This is person #", j)
+            st.write("This is person #", j+1)
             name = st.text_input("Name: ", key = str(j))
             
             rand.seed(get_qrand_int64()[0])
@@ -73,7 +73,7 @@ try:
             #st.write("Delete and type next individual, prior was: ", name.title())
         
         new = np.asarray(list_chance)
-        choose_how_many = st.number_input("How many individuals must be selected?: ", key = "idunnohowthisworks")
+        choose_how_many = st.text_input("How many individuals must be selected?: ", key = "idunnohowthisworks")
         # print(new, type(new))
         sorted_list = np.argsort(new)
         # print(sorted_list)
