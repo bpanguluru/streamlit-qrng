@@ -76,7 +76,6 @@ try:
 
         for k in range(int(choose_how_many.title())):
             st.write(nameChance_dict[new[sorted_list[len(sorted_list) - 1 - k]]])
-except:
     
 
 
