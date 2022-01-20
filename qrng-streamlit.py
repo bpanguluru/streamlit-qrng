@@ -70,7 +70,7 @@ try:
                 chance = rand.random()
             nameChance_dict[chance] = name.title()
             list_chance.append(chance)
-            st.write("Delete and type next individual, prior was: ", name.title())
+            #st.write("Delete and type next individual, prior was: ", name.title())
         
         new = np.asarray(list_chance)
         choose_how_many = st.number_input("How many individuals must be selected?: ", key = "idunnohowthisworks")
