@@ -42,7 +42,7 @@ while(True):
     try:
         randomMethod = st.text_input("What random sort do you want? Enter the corresponding number. 1) Flip a coin 2) Select individuals from a group")
         #st.text("you chose: ", type(randomMethod), randomMethod)
-        st.write(type(randomMethod.title())
+        st.write(type(randomMethod.title()))
         if randomMethod.title() == "1":
             no_flips = st.text_input("Flip how many times?: ", key ="1")
             for i in range(int(no_flips.title())):
