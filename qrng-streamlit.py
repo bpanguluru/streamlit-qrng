@@ -35,7 +35,7 @@ except:
     
 while(True):
     try:
-        randomMethod = st.text_input("What random sort do you want? Enter the corresponding number.\n 1) Flip a coin\n 2) Select individuals from a group\n ", key = "90")
+        randomMethod = st.text_input("What random sort do you want? Enter the corresponding number. 1) Flip a coin 2) Select individuals from a group")
         #st.text("you chose: ", type(randomMethod), randomMethod)
         if randomMethod == "1":
             no_flips = st.text_input("Flip how many times?: ", key ="1")
