@@ -33,11 +33,11 @@ try:
 except:
     st.write("failure")
 
-try:
-    test = st.text_input("What random sort do you want?")
-    st.write(test.title())
-except:
-    st.write("failure_input")
+# try:
+#     test = st.text_input("What random sort do you want?")
+#     st.write(test.title())
+# except:
+#     st.write("failure_input")
     
     
 try:
@@ -61,6 +61,7 @@ try:
 
         for j in range(int(no_individuals.title())):
             name = st.text_input("Name: ",  key = "nombre")
+            st.write("delete and type next individual, prior was: ", name.title())
             rand.seed(get_qrand_int64()[0])
             chance = rand.random()
             while chance == any in list_chance:
