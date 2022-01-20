@@ -1,2 +1,2 @@
 # streamlit-qrng
-published
+https://share.streamlit.io/bpanguluru/streamlit-qrng/main/qrng-streamlit.py
