@@ -34,7 +34,8 @@ except:
     st.write("failure")
 
 try:
-    test = st.text_input("What random sort do you want?")    
+    test = st.text_input("What random sort do you want?")
+    st.write(test.title())
 except:
     st.write("failure_input")
     
