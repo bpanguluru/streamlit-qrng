@@ -34,11 +34,11 @@ except:
     st.write("failure")
 
 try:
-    test = st.text_input("What random sort do you want? Enter the corresponding number. 1) Flip a coin 2) Select individuals from a group")    
+    test = st.text_input("What random sort do you want?)    
 except:
     st.write("failure_input")
     
-while(True):
+while True:
     try:
         randomMethod = st.text_input("What random sort do you want? Enter the corresponding number. 1) Flip a coin 2) Select individuals from a group")
         #st.text("you chose: ", type(randomMethod), randomMethod)
