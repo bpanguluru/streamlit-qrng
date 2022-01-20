@@ -45,7 +45,7 @@ try:
     #st.text("you chose: ", type(randomMethod), randomMethod)
     st.write(type(randomMethod.title()))
     if randomMethod.title() == "1":
-        no_flips = st.text_input("Flip how many times?: ", key ="1")
+        no_flips = st.text_input("Flip how many times?: ", key ="somekey")
         for i in range(int(no_flips.title())):
             rand.seed(get_qrand_int64()[0])
             coin = rand.randint(0, 1)
@@ -57,11 +57,11 @@ try:
     if randomMethod.title() == "2":
         list_chance = []
         nameChance_dict = {}
-        no_individuals = st.text_input("How many individuals?: ", key = "2")
+        no_individuals = st.text_input("How many individuals?: ", key = "somethinnnnn")
 
         for j in range(int(no_individuals.title())):
             st.write("This is person #", j)
-            name = st.text_input("Name: ")
+            name = st.text_input("Name: ", key = str(j))
             
             rand.seed(get_qrand_int64()[0])
             chance = rand.random()
@@ -73,7 +73,7 @@ try:
             st.write("Delete and type next individual, prior was: ", name.title())
         
         new = np.asarray(list_chance)
-        choose_how_many = st.number_input("How many individuals must be selected?: ", key = "3")
+        choose_how_many = st.number_input("How many individuals must be selected?: ", key = "idunnohowthisworks")
         # print(new, type(new))
         sorted_list = np.argsort(new)
         # print(sorted_list)
